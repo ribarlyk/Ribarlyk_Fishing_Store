@@ -7,15 +7,14 @@ export default async function Home() {
 
   let products = [];
   try {
-   
-    products = await Product.find({}).lean(); 
-    products = JSON.parse(JSON.stringify(products)); 
+    products = await Product.find({}).lean();
+    products = JSON.parse(JSON.stringify(products));
   } catch (error) {
     console.error("Error fetching products:", error);
   }
 
   return (
-    <div className="bg-blue-500">
+    <div className="bg-white">
       <ProductsPage products={products} />
     </div>
   );
