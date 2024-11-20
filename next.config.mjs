@@ -1,7 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["dvxs8unt9ljwj.cloudfront.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "dvxs8unt9ljwj.cloudfront.net",
+        port: "",
+      },
+    ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+        permanent: true,
+      },
+    ];
   },
 };
 
