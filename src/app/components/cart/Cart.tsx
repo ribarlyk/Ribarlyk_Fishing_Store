@@ -1,4 +1,9 @@
+"use client";
 function Cart() {
+  const handleClick = () => {
+    window.location.href = "/kolichka";
+  };
+
   return (
     <>
       <svg
@@ -7,6 +12,8 @@ function Cart() {
         strokeLinejoin="round"
         viewBox="0 0 16 16"
         width="30"
+        className="cursor-pointer"
+        onClick={handleClick}
       >
         <path
           fillRule="evenodd"
