@@ -19,7 +19,7 @@ export default function Navigation() {
           <Cart />
         </div>
       </div>
-      <div className="border-t border-b">
+      <div className="border-t border-blue-500 border-b py-1">
         <NavBar />
       </div>
     </div>

@@ -21,9 +21,9 @@ const ProductSchema: Schema<IProduct> = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
       required: true,
-    }, // Reference to Category collection
-    images: { type: [String], default: [] }, // Array of strings, default empty
-    properties: { type: Object, default: {} }, // Generic object
+    },
+    images: { type: [String], default: [] },
+    properties: { type: Object, default: {} },
     updatedAt: { type: Date, default: Date.now },
   },
   {

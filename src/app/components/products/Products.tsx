@@ -1,21 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import ItemCard from "@/app/components/card/Card";
-interface ProductProps {
-  products: {
-    _id: string;
-    title: string;
-    quantity: number;
-    images: string[];
-  }[];
-}
+import type { Product } from "@/types/Products";
 
-const ProductsPage = ({ products }: ProductProps) => {
+const ProductsPage = ({ products }: { products: Product[] }) => {
   const productsList = () =>
     products.map((product) => (
       <li key={product._id}>
         {product.images && product.images.length > 0 && (
-          <ItemCard image={product.images[0]} key={product._id} />
+          <ItemCard product={product} key={product._id} />
         )}
       </li>
     ));

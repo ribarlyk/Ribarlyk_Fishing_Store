@@ -10,17 +10,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import type { Product } from "@/types/Products";
 
-interface ItemCardProps {
-  image: string;
-}
-
-export default function ItemCard({ image }: ItemCardProps) {
+export default function ItemCard({ product }: { product: Product }) {
   return (
     <Card className="w-[350px]">
       <CardContent>
         <Image
-          src={image}
+          src={product.images[0]}
           alt="image"
           width={300}
           height={200}
