@@ -1,6 +1,8 @@
 import dbConnect from "@/app/utils/db_connect";
 import Product from "@/models/Products";
 import ProductsPage from "@/app/components/products/Products";
+import Carousel from "@/app/components/carousel/Carousel";
+import InfoBar from "@/app/components/info/InfoBar";
 export default async function Home() {
   await dbConnect();
 
@@ -14,6 +16,8 @@ export default async function Home() {
 
   return (
     <div className="bg-white">
+      <Carousel />
+      <InfoBar />
       <ProductsPage products={products} />
     </div>
   );
