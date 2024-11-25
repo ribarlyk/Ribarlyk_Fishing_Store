@@ -13,7 +13,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 1) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -28,7 +28,7 @@ export default function Navigation() {
 
   return (
     <div className="flex flex-col bg-white w-auto">
-      <div className="flex flex-row justify-between w-full ">
+      <div className="flex flex-row justify-between w-full hidden md:flex">
         <div className="pl-32">
           <Logo />
         </div>
@@ -40,12 +40,12 @@ export default function Navigation() {
           <Cart />
         </div>
       </div>
-      <div className="border-t border-blue-500 border-b">
+      <div className="border-t border-blue-500 border-b hidden md:block">
         <NavBar />
       </div>
       <div
-        className={`fixed top-0 left-0 w-full transition-transform duration-700 ease-in-out z-50 ${
-          isScrolled ? "translate-y-0" : "-translate-y-full"
+        className={`w-full md:fixed md:top-0 md:left-0 md:transition-transform md:duration-700 md:ease-in-out ${
+          isScrolled ? "md:translate-y-0" : "md:-translate-y-full"
         }`}
       >
         <MobileNavBar />

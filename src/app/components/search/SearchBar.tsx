@@ -6,13 +6,20 @@ import type { Product } from "@/types/Products";
 import Image from "next/image";
 import Link from "next/link";
 
-function SearchBar() {
+function SearchBar({
+  setIsSearch,
+  isSearch,
+}: {
+  setIsSearch: (value: boolean) => void;
+  isSearch: boolean;
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [isSearchInitiated, setIsSearchInitiated] = useState(false);
   const searchBarRef = useRef<HTMLDivElement>(null);
 
+  console.log(setIsSearch, isSearch);
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -123,15 +130,16 @@ function SearchBar() {
     </ul>
   );
 
-  const emptySearchResultElement = results.length === 0 && isSearchInitiated && (
-    <div className="absolute left-0 right-0 bg-white border border-gray-300 shadow-lg z-10">
-      <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-        <div className="flex flex-row items-center gap-6">
-          Няма намерени продукти по посочените критерии
+  const emptySearchResultElement = results.length === 0 &&
+    isSearchInitiated && (
+      <div className="absolute left-0 right-0 bg-white border border-gray-300 shadow-lg z-10">
+        <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+          <div className="flex flex-row items-center gap-6">
+            Няма намерени продукти по посочените критерии
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 
   return (
     <div className="relative w-full" ref={searchBarRef}>
