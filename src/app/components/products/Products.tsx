@@ -14,7 +14,7 @@ const ProductsPage = ({ products }: { products: Product[] }) => {
     ));
 
   return (
-    <div className="w-full">
+    <div className="w-auto md:mx-72">
       <ul className="flex flex-row gap-4 flex-wrap p-4 justify-center">
         {productsList()}
       </ul>

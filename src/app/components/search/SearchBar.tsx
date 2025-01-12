@@ -19,7 +19,6 @@ function SearchBar({
   const [isSearchInitiated, setIsSearchInitiated] = useState(false);
   const searchBarRef = useRef<HTMLDivElement>(null);
 
-  console.log(setIsSearch, isSearch);
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -83,6 +82,7 @@ function SearchBar({
     setSearchTerm("");
     setResults([]);
     setIsSearchInitiated(false);
+    setIsSearch(false);
   };
 
   const closeElement = searchTerm && (
@@ -174,7 +174,15 @@ function SearchBar({
           </svg>
         </div>
       </div>
-      {searchResultElement}
+      <div
+        className={`absolute left-0 right-0 bg-white transition-all duration-400 ease-in-out transform  z-10 ${
+          results.length > 0
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
+        }`}
+      >
+        {searchResultElement}
+      </div>
       {emptySearchResultElement}
     </div>
   );
