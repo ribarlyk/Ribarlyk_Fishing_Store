@@ -1,8 +1,8 @@
 import dbConnect from "@/app/utils/db_connect";
 import Product from "@/models/Products";
 import ProductsPage from "@/app/components/products/Products";
-import Carousel from "@/app/components/carousel/Carousel";
 import InfoBar from "@/app/components/info/InfoBar";
+import Carousel from "@/app/components/carousel/Carousel";
 export default async function Home() {
   await dbConnect();
 

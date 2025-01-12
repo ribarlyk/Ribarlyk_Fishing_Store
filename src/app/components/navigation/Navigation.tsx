@@ -10,6 +10,7 @@ import MobileNavBar from "./MobileNavBar";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +34,7 @@ export default function Navigation() {
           <Logo />
         </div>
         <div className="w-4/12 flex justify-items-end items-center">
-          <SearchBar />
+          <SearchBar setIsSearch={setIsSearch} isSearch={isSearch} />
         </div>
         <div className="flex items-center pr-32">
           <Contact />
