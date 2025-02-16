@@ -26,17 +26,17 @@ function SideBar({
           <div className="p-4">
             <ul className="mt-4 space-y-4">
               <li>
-                <Link href="/vydici" onClick={toggleSidebar}>
+                <Link href="/rods" onClick={toggleSidebar}>
                   <span className="font-semibold">ВЪДИЦИ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/makari" onClick={toggleSidebar}>
+                <Link href="/reels" onClick={toggleSidebar}>
                   <span className="font-semibold">МАКАРИ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/zahranki" onClick={toggleSidebar}>
+                <Link href="/feed" onClick={toggleSidebar}>
                   <span className="font-semibold">ЗАХРАНКИ</span>
                 </Link>
               </li>
@@ -46,17 +46,17 @@ function SideBar({
                 </Link>
               </li>
               <li>
-                <Link href="/aksesoari" onClick={toggleSidebar}>
+                <Link href="/accessories" onClick={toggleSidebar}>
                   <span className="font-semibold">АКСЕСОАРИ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/kymping" onClick={toggleSidebar}>
+                <Link href="/camping" onClick={toggleSidebar}>
                   <span className="font-semibold">КЪМПИНГ</span>
                 </Link>
               </li>
               <li>
-                <Link href="/zanas" onClick={toggleSidebar}>
+                <Link href="/about" onClick={toggleSidebar}>
                   <span className="font-semibold">ЗА НАС</span>
                 </Link>
               </li>

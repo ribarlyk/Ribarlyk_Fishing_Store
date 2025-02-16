@@ -28,7 +28,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-white w-auto">
+    <div className="flex flex-col bg-white w-auto relative z-50">
       <div className="flex flex-row justify-between w-full hidden md:flex">
         <div className="pl-32">
           <Logo />

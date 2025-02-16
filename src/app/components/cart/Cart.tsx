@@ -1,7 +1,7 @@
 "use client";
 function Cart() {
   const handleClick = () => {
-    window.location.href = "/kolichka";
+    window.location.href = "/cart";
   };
 
   return (

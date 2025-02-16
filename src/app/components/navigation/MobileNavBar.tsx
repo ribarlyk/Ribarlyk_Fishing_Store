@@ -27,7 +27,7 @@ function MobileNavBar() {
 
   return (
     <>
-      <div className="flex items-center justify-between w-full p-4 bg-white shadow-md h-28 z-50">
+      <div className="flex items-center justify-between w-full p-4 bg-white shadow-md h-28 z-50 ">
         <div className="flex items-center space-x-4 md:pl-24">
           <FaBars
             size={24}
