@@ -25,37 +25,37 @@ function SideBar({
           </div>
           <div className="p-4">
             <ul className="mt-4 space-y-4">
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/rods" onClick={toggleSidebar}>
                   <span className="font-semibold">ВЪДИЦИ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/reels" onClick={toggleSidebar}>
                   <span className="font-semibold">МАКАРИ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/feed" onClick={toggleSidebar}>
                   <span className="font-semibold">ЗАХРАНКИ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/takymi" onClick={toggleSidebar}>
                   <span className="font-semibold">ТАКЪМИ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/accessories" onClick={toggleSidebar}>
                   <span className="font-semibold">АКСЕСОАРИ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/camping" onClick={toggleSidebar}>
                   <span className="font-semibold">КЪМПИНГ</span>
                 </Link>
               </li>
-              <li>
+              <li className="hover:bg-gray-300 p-2">
                 <Link href="/about" onClick={toggleSidebar}>
                   <span className="font-semibold">ЗА НАС</span>
                 </Link>
