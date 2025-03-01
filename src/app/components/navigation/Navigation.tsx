@@ -14,11 +14,8 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      if (window.scrollY > 1) setIsScrolled(true);
+      else setIsScrolled(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +31,7 @@ export default function Navigation() {
           <Logo />
         </div>
         <div className="w-4/12 flex justify-items-end items-center">
-          <SearchBar setIsSearch={setIsSearch} isSearch={isSearch} />
+          <SearchBar setIsSearch={setIsSearch} />
         </div>
         <div className="flex items-center pr-32">
           <Contact />
@@ -45,11 +42,11 @@ export default function Navigation() {
         <NavBar />
       </div>
       <div
-        className={`w-full md:fixed md:top-0 md:left-0 md:transition-transform md:duration-700 md:ease-in-out ${
-          isScrolled ? "md:translate-y-0" : "md:-translate-y-full"
+        className={`w-full  md:fixed md:top-0 md:left-0 md:transition-transform md:duration-700 md:ease-in-out ${
+          isScrolled ? "md:translate-y-0" : "md:-translate-y-full "
         }`}
       >
-        <MobileNavBar />
+        <MobileNavBar isScrolled={isScrolled} />
       </div>
     </div>
   );

@@ -6,13 +6,7 @@ import type { Product } from "@/types/Products";
 import Image from "next/image";
 import Link from "next/link";
 
-function SearchBar({
-  setIsSearch,
-  isSearch,
-}: {
-  setIsSearch: (value: boolean) => void;
-  isSearch: boolean;
-}) {
+function SearchBar({ setIsSearch }: { setIsSearch: (value: boolean) => void }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);

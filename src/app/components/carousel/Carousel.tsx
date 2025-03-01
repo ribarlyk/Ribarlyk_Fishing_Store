@@ -6,7 +6,6 @@ function Carousel() {
       <Image
         src="https://dvxs8unt9ljwj.cloudfront.net/evastide-2024-site.webp"
         alt="carousel-2"
-        layout="responsive"
         width={1920}
         height={1024}
       />

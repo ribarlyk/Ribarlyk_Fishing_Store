@@ -8,10 +8,11 @@ import SideBar from "./SideBar";
 import { createPortal } from "react-dom";
 import SearchBar from "@/app/components/search/SearchBar";
 
-function MobileNavBar() {
+function MobileNavBar({ isScrolled }: { isScrolled: boolean }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -23,7 +24,27 @@ function MobileNavBar() {
 
   useEffect(() => {
     setIsClient(true);
+
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsSmallScreen(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    setIsSmallScreen(mediaQuery.matches);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
   }, []);
+
+  useEffect(() => {
+    if (isScrolled) setIsSearch(false);
+
+    return () => {
+      setIsSearch(false);
+    };
+  }, [isScrolled]);
 
   return (
     <>
@@ -52,7 +73,9 @@ function MobileNavBar() {
           isSearch ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
-        <SearchBar setIsSearch={setIsSearch} isSearch={isSearch} />
+        {(isScrolled || isSmallScreen) && (
+          <SearchBar setIsSearch={setIsSearch} />
+        )}
       </div>
       {isClient &&
         createPortal(

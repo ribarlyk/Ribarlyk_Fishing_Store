@@ -18,13 +18,7 @@ function Section({ title, image }: SectionProps) {
         className="relative"
         onClick={() => router.push(SECTIONS_TO_PATHS[title])}
       >
-        <Image
-          src={image}
-          alt={"секция - " + title}
-          layout="fixed"
-          width={500}
-          height={400}
-        />
+        <Image src={image} alt={"секция - " + title} width={500} height={400} />
         <span className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 text-white font-semibold text-xl p-2 text-center tracking-wider">
           {title}
         </span>
