@@ -1,10 +1,12 @@
+import CarpLoader from "@/app/components/loader/CarpLoader";
+
 function Loader() {
   return (
     <div
-      className="flex justify-center items-center w-full"
+      className="flex justify-center items-center w-auto"
       style={{ height: "64vh" }}
     >
-      Loading...
+      <CarpLoader />
     </div>
   );
 }

@@ -6,6 +6,7 @@ interface Product {
   quantity: number;
   images: string[];
   updatedAt: Date;
+  category: string;
 }
 
 type SectionTitle =

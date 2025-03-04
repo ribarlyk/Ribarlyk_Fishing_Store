@@ -40,8 +40,11 @@ function Lift() {
   return (
     <>
       {isScrolled && (
-        <div className="w-14 h-14 bg-blue-500 text-white rounded-full flex justify-center items-center cursor-pointer fixed bottom-4 right-4">
-          <FaArrowCircleUp size={32} onClick={scrollToTop} />
+        <div
+          onClick={scrollToTop}
+          className="w-14 h-14 bg-blue-500 text-white rounded-full flex justify-center items-center cursor-pointer fixed bottom-4 right-4"
+        >
+          <FaArrowCircleUp size={32} />
         </div>
       )}
     </>
