@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <FooterIcons />
-      <div className="md:flex md:flex-row p-4 flex-col gap-32 justify-center w-full">
+      <div className="md:flex md:flex-row p-4 flex-col gap-32 justify-center w-auto">
         <div>
           <h3 className="text-2xl py-4 border-b-2">Информация</h3>
           <ul className="py-4">
